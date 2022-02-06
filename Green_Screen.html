@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: cursive;
+      font-size: 25px;
+      background-color: #F1DCB5;
+      margin: 30px;
+    }
+
+    canvas {
+      border: 1px solid gray;
+      max-width: 500px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    input[type="file"],
+    input[type="button"] {
+      padding: 5px;
+      font-family: cursive;
+    }
+
+    input[type="button"] {
+      padding: 5px 25px;
+      background-color: #E79608;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Green Screen</h1>
+  
+  <canvas width="500px" height="280px" id="cns1"></canvas>
+  <canvas width="500px" height="280px" id="cns2"></canvas>
+  
+  <p>
+  <div>
+    Foreground:<input type="file" multiple="flase" accept="image/*" id="fgfile" onchange="loadForegroundImage()">
+  </div>
+
+  <div>
+    Background:<input type="file" multiple="flase" accept="image/*" id="bgfile" onchange="loadBackgroundImage()">
+  </div>
+
+  <div>
+    <input type="button" value="Create Composite" id="oimage" onclick="goGreen()">
+    <input type="button" value="Clear Canvas" id="clr_cns" onclick="clearCanvas()">
+  </div>
+
+  <script src='http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js'></script>
+  <script src="Green_Screen.js"></script>
+
+</body>
+
+</html>
